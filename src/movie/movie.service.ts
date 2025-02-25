@@ -5,9 +5,9 @@ export interface Movie {
   title: string;
 }
 
-// IOC 컨테이너에게 어떤 클래스를 사용할지 알려주는 역할
+
 @Injectable()
-export class AppService {
+export class MovieService {
   private movies: Movie[] = [ {
     id : 1,
     title : "a",
