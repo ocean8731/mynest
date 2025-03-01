@@ -3,6 +3,7 @@ import { MoviesModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
+import { Movie } from './movies/entity/moive.entity';
 
 // 중앙 모듈 역할
 @Module({
@@ -30,7 +31,7 @@ import * as Joi from 'joi';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        entities: [],
+        entities: [Movie],
         // 개발서버에서만 켜놓자!
         synchronize: true,
       }),

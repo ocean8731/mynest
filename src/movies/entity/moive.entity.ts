@@ -1,13 +1,22 @@
-import { Exclude, Expose, Transform } from 'class-transformer';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, VersionColumn, UpdateDateColumn } from 'typeorm';
 
-// 값을 막아주는 Exclude
-@Exclude()
+@Entity()
 export class Movie {
-  // 막힌 값도 뚫어주는 Expose
-  @Expose()
+  @PrimaryGeneratedColumn()
   id: number;
-  @Expose()
+
+  @Column()
   title: string;
-  @Transform(({ value }) => value.toString().toUpperCase())
+
+  @Column()
   genre: string;
+  
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @VersionColumn()
+  version: number;
 }
