@@ -3,7 +3,7 @@ import { MoviesModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
-import { Movie } from './movies/entity/moive.entity';
+import { Movie } from './movies/entity/moives.entity';
 
 // 중앙 모듈 역할
 @Module({
